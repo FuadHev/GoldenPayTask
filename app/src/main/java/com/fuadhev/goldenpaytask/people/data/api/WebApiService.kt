@@ -9,5 +9,4 @@ interface WebApiService {
     @GET("people")
     suspend fun getPeoples():Response<PeopleRemoteResponse>
 
-
 }

@@ -1,6 +1,6 @@
 package com.fuadhev.goldenpaytask.people.di
 
-import com.fuadhev.goldenpaytask.common.Constant.BASE_URL
+import com.fuadhev.goldenpaytask.BuildConfig
 import com.fuadhev.goldenpaytask.people.data.api.WebApiService
 import com.fuadhev.goldenpaytask.people.data.datasource.PeopleRemoteDataSource
 import com.fuadhev.goldenpaytask.people.data.datasource.PeopleRemoteDataSourceImpl
@@ -36,11 +36,9 @@ object CoroutineModule {
 @InstallIn(SingletonComponent::class)
 abstract class DataSourceModule {
 
-
     @Singleton
     @Binds
     abstract fun providePeopleRemoteDataSource(dataSource: PeopleRemoteDataSourceImpl): PeopleRemoteDataSource
-
 
 }
 
@@ -49,18 +47,15 @@ abstract class DataSourceModule {
 @InstallIn(SingletonComponent::class)
 abstract class PeopleRepositoryModule {
 
-
     @Singleton
     @Binds
     abstract fun providePeopleRepository(remoteRepository: PeopleRepositoryImpl): PeopleRepository
-
 
 }
 
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
-
 
     @Singleton
     @Provides
@@ -74,7 +69,6 @@ object UseCaseModule {
         return  GetPeopleItemListUseCase()
     }
 
-
 }
 
 
@@ -84,7 +78,7 @@ object RemoteModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(): Retrofit = Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(
+    fun provideRetrofit(): Retrofit = Retrofit.Builder().baseUrl(BuildConfig.BASE_URL).addConverterFactory(
         GsonConverterFactory.create()
     ).build()
 
