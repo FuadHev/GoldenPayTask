@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GoldenPayTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_currency_default_hint">Məbləği daxil edin</string>
+    <string name="label_currency_hint">Məbləğ</string>
+    <string name="err_msg_data_not_found">Data yoxdur</string>
+    <string name="label_toolbar_people">People</string>
+    <string name="label_gender_male">Male</string>
+    <string name="label_gender_female">Female</string>
+    <string name="label_gender_na">NA</string>
+</resources>
